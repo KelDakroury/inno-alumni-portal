@@ -44,8 +44,6 @@ const statusMap = {
 export const ElectiveRequestTable = (props) => {
   const { orders = [], title, subheader, updateElectives, updateBookedElectives } = props;
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
   const [selectedRequest, setSelectedRequest] = useState({
     "id": "cljvtv4d00000mzyzwtvijk8d",
     "feedback": "",
