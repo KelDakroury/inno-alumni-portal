@@ -3,8 +3,12 @@ import NextLink from 'next/link';
 import { Box, Typography, Unstable_Grid2 as Grid } from '@mui/material';
 import { Logo } from 'src/components/logo';
 
-// TODO: Change subtitle text
-
+/**
+ * Layout component for the application.
+ * @param {Object} props - Props for the Layout component.
+ * @param {React.ReactNode} props.children - The children components to be rendered inside the layout.
+ * @returns {JSX.Element} - The rendered layout component.
+ */
 export const Layout = (props) => {
   const { children } = props;
 
@@ -20,6 +24,7 @@ export const Layout = (props) => {
         container
         sx={{ flex: '1 1 auto' }}
       >
+        {/* Left side */}
         <Grid
           xs={12}
           lg={6}
@@ -30,6 +35,7 @@ export const Layout = (props) => {
             position: 'relative'
           }}
         >
+          {/* Header */}
           <Box
             component="header"
             sx={{
@@ -40,6 +46,7 @@ export const Layout = (props) => {
               width: '100%'
             }}
           >
+            {/* Logo */}
             <Box
               component={NextLink}
               href="/"
@@ -56,8 +63,10 @@ export const Layout = (props) => {
               />
             </Box>
           </Box>
+          {/* Content */}
           {children}
         </Grid>
+        {/* Right side */}
         <Grid
           xs={12}
           lg={6}
@@ -72,6 +81,7 @@ export const Layout = (props) => {
             }
           }}
         >
+          {/* Right side content */}
           <Box sx={{ p: 3, display: 'flex', flexDirection: 'column' }}>
             <Typography
               align="center"
@@ -84,6 +94,7 @@ export const Layout = (props) => {
               variant="h1"
             >
               Welcome to{' '}
+              {/* Link */}
               <Box
                 component="a"
                 sx={{ color: '#41BA21' }}
@@ -99,6 +110,7 @@ export const Layout = (props) => {
             >
               The stay in touch with university related activities.
             </Typography>
+            {/* Image */}
             <img
               style={{ height: 300, justifyItems: 'center', marginTop: 40, borderRadius: 15 }}
               alt=""
@@ -111,6 +123,7 @@ export const Layout = (props) => {
   );
 };
 
+// Prop types for the Layout component
 Layout.prototypes = {
   children: PropTypes.node
 };
