@@ -20,7 +20,7 @@ jobs:
           source_dir: ./src
           recurse: true
           output_dir: ./out
-          template: minami
+          template: clean-jsdoc-theme
           front_page: README.md
 
       - name: Deploy
