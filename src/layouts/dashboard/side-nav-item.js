@@ -2,9 +2,15 @@ import NextLink from 'next/link';
 import PropTypes from 'prop-types';
 import { Box, ButtonBase } from '@mui/material';
 
+/**
+ * Component for a single item in the side navigation.
+ * @param {Object} props - Props for the side navigation item.
+ * @returns {JSX.Element} - Side navigation item JSX.
+ */
 export const SideNavItem = (props) => {
   const { active = false, disabled, external, icon, path, title } = props;
 
+  // Determine link properties based on whether the path is internal or external.
   const linkProps = path
     ? external
       ? {
@@ -40,6 +46,7 @@ export const SideNavItem = (props) => {
         }}
         {...linkProps}
       >
+        {/* Render icon if available */}
         {icon && (
           <Box
             component="span"
@@ -57,6 +64,7 @@ export const SideNavItem = (props) => {
             {icon}
           </Box>
         )}
+        {/* Render title */}
         <Box
           component="span"
           sx={{

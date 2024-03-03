@@ -21,24 +21,40 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from 'src/hooks/use-auth';
 import { useCallback } from 'react';
 
+/**
+ * SideNav component displays a navigation sidebar with links to different sections of the application.
+ * It also includes a "Sign Out" button and bug reporting information.
+ * 
+ * @param {object} props - The properties of the SideNav component.
+ * @param {boolean} props.open - Boolean indicating whether the sidebar is open.
+ * @param {function} props.onClose - Function to handle the closing of the sidebar.
+ * 
+ * @returns {JSX.Element} - JSX element representing the SideNav component.
+ */
 export const SideNav = (props) => {
+  // Destructure props
   const { open, onClose } = props;
+
+  // Get the current pathname
   const pathname = usePathname();
+
+  // Check if screen size is large up
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
 
+  // Get router and authentication context
   const router = useRouter();
   const auth = useAuth();
 
-  const handleSignOut = useCallback(
-    () => {
-      onClose?.();
-      auth.signOut();
-      router.push('/auth/login');
-    },
-    [onClose, auth, router]
-  );
+  /**
+   * Function to handle user sign out.
+   */
+  const handleSignOut = useCallback(() => {
+    onClose?.(); // Close the sidebar
+    auth.signOut(); // Sign out the user
+    router.push('/auth/login'); // Redirect to login page
+  }, [onClose, auth, router]);
 
-
+  // JSX content for the sidebar
   const content = (
     <Scrollbar
       sx={{
@@ -51,6 +67,7 @@ export const SideNav = (props) => {
         }
       }}
     >
+      {/* Sidebar content */}
       <Box
         sx={{
           display: 'flex',
@@ -58,6 +75,7 @@ export const SideNav = (props) => {
           height: '100%'
         }}
       >
+        {/* Logo */}
         <Box sx={{ p: 3 }}>
           <Box
             component={NextLink}
@@ -75,6 +93,7 @@ export const SideNav = (props) => {
           </Box>
         </Box>
         <Divider sx={{ borderColor: 'neutral.700' }} />
+        {/* Navigation links */}
         <Box
           component="nav"
           sx={{
@@ -95,6 +114,7 @@ export const SideNav = (props) => {
               m: 0
             }}
           >
+            {/* Mapping through navigation items */}
             {items.map((item) => {
               const active = item.path ? (pathname === item.path) : false;
 
@@ -111,6 +131,7 @@ export const SideNav = (props) => {
               );
             })}
           </Stack>
+          {/* Sign Out button */}
           <Stack sx={{
             display: 'flex',
             justifyContent: 'center',
@@ -132,6 +153,7 @@ export const SideNav = (props) => {
           </Stack>
         </Box>
         <Divider sx={{ borderColor: 'neutral.700' }} />
+        {/* Bug reporting information */}
         <Box
           sx={{
             px: 2,
@@ -158,6 +180,7 @@ export const SideNav = (props) => {
     </Scrollbar>
   );
 
+  // Render sidebar based on screen size
   if (lgUp) {
     return (
       <Drawer
@@ -175,28 +198,29 @@ export const SideNav = (props) => {
         {content}
       </Drawer>
     );
+  } else {
+    return (
+      <Drawer
+        anchor="left"
+        onClose={onClose}
+        open={open}
+        PaperProps={{
+          sx: {
+            backgroundColor: 'neutral.800',
+            color: 'common.white',
+            width: 280
+          }
+        }}
+        sx={{ zIndex: (theme) => theme.zIndex.appBar + 100 }}
+        variant="temporary"
+      >
+        {content}
+      </Drawer>
+    );
   }
-
-  return (
-    <Drawer
-      anchor="left"
-      onClose={onClose}
-      open={open}
-      PaperProps={{
-        sx: {
-          backgroundColor: 'neutral.800',
-          color: 'common.white',
-          width: 280
-        }
-      }}
-      sx={{ zIndex: (theme) => theme.zIndex.appBar + 100 }}
-      variant="temporary"
-    >
-      {content}
-    </Drawer>
-  );
 };
 
+// Prop types for the SideNav component
 SideNav.propTypes = {
   onClose: PropTypes.func,
   open: PropTypes.bool,

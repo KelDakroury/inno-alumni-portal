@@ -1,11 +1,14 @@
 import { ChartBarIcon, CreditCardIcon, RectangleStackIcon, CommandLineIcon, UserIcon, BanknotesIcon } from '@heroicons/react/24/solid';
 import { SvgIcon } from '@mui/material';
 
+/**
+ * Array of navigation items with icons.
+ */
 export const items = [
   {
-    title: 'Overview',
-    path: '/',
-    icon: (
+    title: 'Overview', // Title of the navigation item
+    path: '/', // Path associated with the navigation item
+    icon: ( // Icon component associated with the navigation item
       <SvgIcon fontSize="small">
         <ChartBarIcon />
       </SvgIcon>
