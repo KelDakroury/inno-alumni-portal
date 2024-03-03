@@ -2,6 +2,10 @@ import { common } from '@mui/material/colors';
 import { alpha } from '@mui/material/styles';
 import { error, indigo, info, neutral, success, warning } from './colors';
 
+/**
+ * Creates a customized palette for MUI theme.
+ * @returns {object} Customized palette.
+ */
 export function createPalette() {
   return {
     action: {

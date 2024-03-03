@@ -1,3 +1,7 @@
+/**
+ * Creates customized shadows for MUI theme.
+ * @returns {Array} Customized shadows.
+ */
 export const createShadows = () => {
   return [
     'none',

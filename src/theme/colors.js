@@ -1,5 +1,10 @@
 import { alpha } from '@mui/material/styles';
 
+/**
+ * Enhances a color object with alpha values.
+ * @param {object} color - Color object containing main color value.
+ * @returns {object} Color object with added alpha values.
+ */
 const withAlphas = (color) => {
   return {
     ...color,
@@ -11,6 +16,10 @@ const withAlphas = (color) => {
   };
 };
 
+/**
+ * Neutral color palette.
+ * @type {object}
+ */
 export const neutral = {
   50: '#F8F9FA',
   100: '#F3F4F6',
@@ -24,6 +33,10 @@ export const neutral = {
   900: '#111927'
 };
 
+/**
+ * Indigo color palette with alpha values.
+ * @type {object}
+ */
 export const indigo = withAlphas({
   lightest: '#F5F7FF',
   light: '#EBEEFE',
@@ -33,6 +46,10 @@ export const indigo = withAlphas({
   contrastText: '#FFFFFF'
 });
 
+/**
+ * Success color palette with alpha values.
+ * @type {object}
+ */
 export const success = withAlphas({
   lightest: '#F0FDF9',
   light: '#3FC79A',
@@ -42,6 +59,10 @@ export const success = withAlphas({
   contrastText: '#FFFFFF'
 });
 
+/**
+ * Info color palette with alpha values.
+ * @type {object}
+ */
 export const info = withAlphas({
   lightest: '#ECFDFF',
   light: '#CFF9FE',
@@ -51,6 +72,10 @@ export const info = withAlphas({
   contrastText: '#FFFFFF'
 });
 
+/**
+ * Warning color palette with alpha values.
+ * @type {object}
+ */
 export const warning = withAlphas({
   lightest: '#FFFAEB',
   light: '#FEF0C7',
@@ -60,6 +85,10 @@ export const warning = withAlphas({
   contrastText: '#FFFFFF'
 });
 
+/**
+ * Error color palette with alpha values.
+ * @type {object}
+ */
 export const error = withAlphas({
   lightest: '#FEF3F2',
   light: '#FEE4E2',

@@ -10,6 +10,12 @@ import {
 // Used only to create transitions
 const muiTheme = createTheme();
 
+/**
+ * Creates customized MUI components based on the provided configuration.
+ * @param {object} config - Configuration object.
+ * @param {object} config.palette - Color palette for customization.
+ * @returns {object} Customized MUI components.
+ */
 export function createComponents(config) {
   const { palette } = config;
 

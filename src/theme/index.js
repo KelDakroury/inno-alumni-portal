@@ -4,6 +4,10 @@ import { createComponents } from './create-components';
 import { createShadows } from './create-shadows';
 import { createTypography } from './create-typography';
 
+/**
+ * Creates a customized MUI theme.
+ * @returns {object} Customized MUI theme.
+ */
 export function createTheme() {
   const palette = createPalette();
   const components = createComponents({ palette });
