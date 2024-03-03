@@ -1,38 +1,41 @@
-import { createContext, useContext, useEffect, useReducer, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { getCurrentUser, loginRegularUser, registerRegularUser } from 'src/api';
+import { createContext, useContext, useEffect, useReducer, useRef } from 'react'; // Importing necessary hooks from React
+import PropTypes from 'prop-types'; // Importing PropTypes for defining prop types
+import { getCurrentUser, loginRegularUser, registerRegularUser } from 'src/api'; // Importing API functions for user authentication
 
+// Enum for action types used in the reducer
 const HANDLERS = {
   INITIALIZE: 'INITIALIZE',
   SIGN_IN: 'SIGN_IN',
   SIGN_OUT: 'SIGN_OUT'
 };
 
+// Initial state for authentication context
 const initialState = {
   isAuthenticated: false,
   isLoading: true,
   user: null
 };
 
+// Reducer function to handle authentication state transitions
+const reducer = (state, action) => (
+  handlers[action.type] ? handlers[action.type](state, action) : state
+);
+
+// Handlers for different action types in the reducer
 const handlers = {
   [HANDLERS.INITIALIZE]: (state, action) => {
     const user = action.payload;
 
     return {
       ...state,
-      ...(
-        // if payload (user) is provided, then is authenticated
+      ...(user ? ({
+        isAuthenticated: true,
+        isLoading: false,
         user
-          ? ({
-            isAuthenticated: true,
-            isLoading: false,
-            user
-          })
-          : ({
-            isLoading: false,
-            isAuthenticated: false
-          })
-      )
+      }) : ({
+        isLoading: false,
+        isAuthenticated: false
+      }))
     };
   },
   [HANDLERS.SIGN_IN]: (state, action) => {
@@ -53,21 +56,22 @@ const handlers = {
   }
 };
 
-const reducer = (state, action) => (
-  handlers[action.type] ? handlers[action.type](state, action) : state
-);
-
-// The role of this context is to propagate authentication state through the App tree.
-
+// Context for managing authentication state
 export const AuthContext = createContext({ undefined });
 
+/**
+ * AuthProvider component to manage authentication state and provide authentication-related functions.
+ * @param {Object} props - Component props
+ * @param {ReactNode} props.children - The child components wrapped by the AuthProvider.
+ * @returns {JSX.Element} JSX element representing the AuthProvider.
+ */
 export const AuthProvider = (props) => {
   const { children } = props;
   const [state, dispatch] = useReducer(reducer, initialState);
   const initialized = useRef(false);
 
+  // Function to initialize authentication state
   const initialize = async () => {
-    // Prevent from calling twice in development mode with React.StrictMode enabled
     if (initialized.current) {
       return;
     }
@@ -106,17 +110,16 @@ export const AuthProvider = (props) => {
         type: HANDLERS.INITIALIZE
       });
     }
-
   };
 
   useEffect(
     () => {
       initialize();
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 
+  // Function to simulate authentication without signing in
   const skip = () => {
     try {
       window.sessionStorage.setItem('authenticated', 'true');
@@ -137,12 +140,11 @@ export const AuthProvider = (props) => {
     });
   };
 
+  // Function to sign in a user
   const signIn = async (email, password) => {
-
     const { access_token: accessToken } = await loginRegularUser({ email, password });
     const userInfo = await getCurrentUser({ accessToken });
 
-    // console.log(userInfo);
     try {
       window.sessionStorage.setItem('authenticated', 'true');
       window.sessionStorage.setItem('alumniToken', accessToken);
@@ -163,13 +165,13 @@ export const AuthProvider = (props) => {
     });
   };
 
+  // Function to sign up a new user
   const signUp = async (email, name, password, confirmPassword) => {
     const registeredUser = await registerRegularUser({ name, email, password, confirmPassword });
-
-    // console.log(registeredUser);
-
+    // Handle registration response
   };
 
+  // Function to sign out the current user
   const signOut = () => {
     dispatch({
       type: HANDLERS.SIGN_OUT
@@ -191,10 +193,16 @@ export const AuthProvider = (props) => {
   );
 };
 
+// PropTypes for the AuthProvider component
 AuthProvider.propTypes = {
   children: PropTypes.node
 };
 
+// Consumer for AuthContext
 export const AuthConsumer = AuthContext.Consumer;
 
+/**
+ * Custom hook to access the authentication context and its state and functions.
+ * @returns {Object} An object containing authentication state and functions.
+ */
 export const useAuthContext = () => useContext(AuthContext);
