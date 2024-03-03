@@ -24,6 +24,14 @@ const statusMap = {
   REJECTED: 'error'
 };
 
+/**
+ * Component for rendering overview requests.
+ * @param {Object} props - Component props.
+ * @param {Array} props.orders - Array of order objects.
+ * @param {Object} props.sx - Styles object.
+ * @param {string} props.title - Title of the card.
+ * @returns {JSX.Element} - JSX for overview requests.
+ */
 export const OverviewRequests = (props) => {
   const { orders = [], sx, title } = props;
 
@@ -98,7 +106,7 @@ export const OverviewRequests = (props) => {
   );
 };
 
-OverviewRequests.prototype = {
+OverviewRequests.propTypes = {
   orders: PropTypes.array,
   sx: PropTypes.object,
   title: PropTypes.string,

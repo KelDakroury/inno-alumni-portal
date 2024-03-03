@@ -17,6 +17,13 @@ import {
   SvgIcon
 } from '@mui/material';
 
+/**
+ * Component for rendering a list of latest products in an overview.
+ * @param {Object} props - Component props.
+ * @param {Array} props.products - Array of product objects.
+ * @param {Object} props.sx - Styles object.
+ * @returns {JSX.Element} - JSX for latest products list.
+ */
 export const OverviewLatestProducts = (props) => {
   const { products = [], sx } = props;
 

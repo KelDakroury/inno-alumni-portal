@@ -18,7 +18,6 @@ import {
 import { Scrollbar } from 'src/components/scrollbar';
 import { SeverityPill } from 'src/components/severity-pill';
 import { useCallback, useState } from 'react';
-import { maxWidth } from '@mui/system';
 
 const statusMap = {
   PENDING: 'warning',
@@ -26,6 +25,14 @@ const statusMap = {
   REJECTED: 'error'
 };
 
+/**
+ * Component for creating a pass request.
+ * @param {Object} props - Component props.
+ * @param {Array} props.orders - Orders array.
+ * @param {Object} props.sx - Styles object.
+ * @param {string} props.title - Title string.
+ * @returns {JSX.Element} - Returns JSX for creating a pass request.
+ */
 export const CreatePassRequest = (props) => {
   const { orders = [], sx, title } = props;
   const [values, setValues] = useState({
@@ -37,7 +44,10 @@ export const CreatePassRequest = (props) => {
     country: 'Russian Federation'
   });
 
-
+  /**
+   * Function to handle input change.
+   * @param {Event} event - Change event.
+   */
   const handleChange = useCallback(
     (event) => {
       setValues((prevState) => ({
@@ -48,6 +58,10 @@ export const CreatePassRequest = (props) => {
     []
   );
 
+  /**
+   * Function to handle form submission.
+   * @param {Event} event - Form submission event.
+   */
   const handleSubmit = useCallback(
     (event) => {
       event.preventDefault();
@@ -152,7 +166,7 @@ export const CreatePassRequest = (props) => {
   );
 };
 
-CreatePassRequest.prototype = {
+CreatePassRequest.propTypes = {
   orders: PropTypes.array,
   sx: PropTypes.object,
   title: PropTypes.string,
