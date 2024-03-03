@@ -1,6 +1,11 @@
 import { ChartBarIcon, CreditCardIcon, RectangleStackIcon, CommandLineIcon, UserIcon, BanknotesIcon } from '@heroicons/react/24/solid';
 import { SvgIcon } from '@mui/material';
 
+/**
+ * Array of objects representing items for an admin dashboard navigation menu.
+ * Each item contains a title, a path, and an icon.
+ * @type {Array<object>}
+ */
 export const items = [
   {
     title: 'Overview',

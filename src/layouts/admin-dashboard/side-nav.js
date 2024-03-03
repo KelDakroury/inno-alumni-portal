@@ -17,11 +17,19 @@ import { Scrollbar } from 'src/components/scrollbar';
 import { items } from './config';
 import { SideNavItem } from './side-nav-item';
 
+/**
+ * Component representing the side navigation bar.
+ * @param {Object} props - Props for the SideNav component.
+ * @param {Function} props.onClose - Function to handle closing the side navigation.
+ * @param {boolean} props.open - Whether the side navigation is open.
+ * @returns {JSX.Element} - The rendered side navigation.
+ */
 export const SideNav = (props) => {
   const { open, onClose } = props;
   const pathname = usePathname();
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
 
+  // Content for the side navigation
   const content = (
     <Scrollbar
       sx={{
@@ -42,6 +50,7 @@ export const SideNav = (props) => {
         }}
       >
         <Box sx={{ p: 3 }}>
+          {/* Logo */}
           <Box
             component={NextLink}
             href="/admin"
@@ -75,6 +84,7 @@ export const SideNav = (props) => {
               m: 0
             }}
           >
+            {/* Render side navigation items */}
             {items.map((item) => {
               const active = item.path ? (pathname === item.path) : false;
 
@@ -99,6 +109,7 @@ export const SideNav = (props) => {
             py: 3
           }}
         >
+          {/* Report bug section */}
           <Typography
             color="neutral.100"
             variant="subtitle2"
@@ -109,6 +120,7 @@ export const SideNav = (props) => {
             color="neutral.500"
             variant="body2"
           >
+            {/* Telegram group link */}
             Use this <a href="https://t.me/+54TTT9VXGZMyMGIy"
               target="_blank"
               style={{ color: '#40BA21' }}
@@ -119,6 +131,7 @@ export const SideNav = (props) => {
     </Scrollbar>
   );
 
+  // Render different drawer based on screen size
   if (lgUp) {
     return (
       <Drawer
@@ -158,6 +171,7 @@ export const SideNav = (props) => {
   );
 };
 
+// Prop types for the SideNav component
 SideNav.propTypes = {
   onClose: PropTypes.func,
   open: PropTypes.bool,

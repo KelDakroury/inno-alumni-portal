@@ -7,6 +7,7 @@ import { TopNav } from './top-nav';
 
 const SIDE_NAV_WIDTH = 280;
 
+// Styled components for the layout
 const LayoutRoot = styled('div')(({ theme }) => ({
   display: 'flex',
   flex: '1 1 auto',
@@ -23,11 +24,18 @@ const LayoutContainer = styled('div')({
   width: '100%'
 });
 
+/**
+ * Layout component responsible for rendering the application layout.
+ * It includes a top navigation bar, a side navigation bar, and the main content area.
+ * @param {Object} props - Props for the Layout component.
+ * @returns {JSX.Element} - The rendered layout.
+ */
 export const Layout = withAuthGuard((props) => {
   const { children } = props;
   const pathname = usePathname();
   const [openNav, setOpenNav] = useState(false);
 
+  // Callback function to handle pathname change
   const handlePathnameChange = useCallback(
     () => {
       if (openNav) {
@@ -47,11 +55,14 @@ export const Layout = withAuthGuard((props) => {
 
   return (
     <>
+      {/* Top navigation bar */}
       <TopNav onNavOpen={() => setOpenNav(true)} />
+      {/* Side navigation bar */}
       <SideNav
         onClose={() => setOpenNav(false)}
         open={openNav}
       />
+      {/* Main content area */}
       <LayoutRoot>
         <LayoutContainer>
           {children}

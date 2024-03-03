@@ -4,16 +4,25 @@ import PropTypes from 'prop-types';
 import { Box, Divider, MenuItem, MenuList, Popover, Typography } from '@mui/material';
 import { useAuth } from 'src/hooks/use-auth';
 
+/**
+ * Component for rendering account popover.
+ * @param {object} props - Component props.
+ * @param {any} props.anchorEl - The anchor element for the popover.
+ * @param {function} props.onClose - Function to handle popover close event.
+ * @param {boolean} props.open - Boolean indicating whether the popover is open.
+ * @returns {JSX.Element} Account popover component.
+ */
 export const AccountPopover = (props) => {
   const { anchorEl, onClose, open } = props;
   const router = useRouter();
   const auth = useAuth();
 
+  // Callback function to handle sign out
   const handleSignOut = useCallback(
     () => {
-      onClose?.();
-      auth.signOut();
-      router.push('/auth/login');
+      onClose?.(); // Call onClose function if provided
+      auth.signOut(); // Call signOut function from auth context
+      router.push('/auth/login'); // Redirect to login page
     },
     [onClose, auth, router]
   );
@@ -35,6 +44,7 @@ export const AccountPopover = (props) => {
           px: 2
         }}
       >
+        {/* Display account information */}
         <Typography variant="overline">
           Account
         </Typography>
@@ -42,10 +52,11 @@ export const AccountPopover = (props) => {
           color="text.secondary"
           variant="body2"
         >
-          Daniel Atonge
+          Daniel Atonge {/* Replace with actual user name */}
         </Typography>
       </Box>
       <Divider />
+      {/* Menu list for account actions */}
       <MenuList
         disablePadding
         dense
@@ -56,6 +67,7 @@ export const AccountPopover = (props) => {
           }
         }}
       >
+        {/* MenuItem for sign out */}
         <MenuItem onClick={handleSignOut}>
           Sign out
         </MenuItem>
@@ -64,6 +76,7 @@ export const AccountPopover = (props) => {
   );
 };
 
+// PropTypes for AccountPopover component
 AccountPopover.propTypes = {
   anchorEl: PropTypes.any,
   onClose: PropTypes.func,

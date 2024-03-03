@@ -22,8 +22,14 @@ import { useAuth } from 'src/hooks/use-auth';
 const SIDE_NAV_WIDTH = 280;
 const TOP_NAV_HEIGHT = 64;
 
+/**
+ * Component representing the top navigation bar.
+ * @param {Object} props - Props for the TopNav component.
+ * @param {Function} props.onNavOpen - Function to handle opening the side navigation.
+ * @returns {JSX.Element} - The rendered top navigation bar.
+ */
 export const TopNav = (props) => {
-    const { user } = useAuth()
+  const { user } = useAuth();
   const { onNavOpen } = props;
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   const accountPopover = usePopover();
@@ -61,6 +67,7 @@ export const TopNav = (props) => {
             direction="row"
             spacing={2}
           >
+            {/* Hamburger icon for small screens */}
             {!lgUp && (
               <IconButton onClick={onNavOpen}>
                 <SvgIcon fontSize="small">
@@ -74,6 +81,7 @@ export const TopNav = (props) => {
             direction="row"
             spacing={2}
           >
+            {/* User avatar */}
             <span onClick={accountPopover.handleOpen} style={{ cursor: 'pointer' }} ref={accountPopover.anchorRef} >
               <Avatar
                 variant='beam'
@@ -84,6 +92,7 @@ export const TopNav = (props) => {
           </Stack>
         </Stack>
       </Box>
+      {/* Account popover for user details */}
       <AccountPopover
         anchorEl={accountPopover.anchorRef.current}
         open={accountPopover.open}
@@ -93,6 +102,7 @@ export const TopNav = (props) => {
   );
 };
 
+// Prop types for the TopNav component
 TopNav.propTypes = {
   onNavOpen: PropTypes.func
 };
