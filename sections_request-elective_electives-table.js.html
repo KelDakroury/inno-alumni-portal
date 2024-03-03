@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>sections/request-elective/electives-table.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AccountPopover">AccountPopover</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AccountProfile">AccountProfile</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AccountProfileDetails">AccountProfileDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AdminElectiveRequests">AdminElectiveRequests</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AdminPassRequests">AdminPassRequests</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AdminViewAccounts">AdminViewAccounts</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AdminViewDonations">AdminViewDonations</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#ApexChart">ApexChart</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#applyPagination">applyPagination</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AuthGuard">AuthGuard</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AuthProvider">AuthProvider</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#avatars">avatars</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#BankDetails">BankDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#Chart">Chart</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createComponents">createComponents</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#createEmotionCache">createEmotionCache</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createPalette">createPalette</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#createPassRequest">createPassRequest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#CreatePassRequest">CreatePassRequest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#createResourceId">createResourceId</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#createShadows">createShadows</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createTheme">createTheme</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#createTypography">createTypography</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#deletePassRequest">deletePassRequest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#ElectiveRequestTable">ElectiveRequestTable</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#ElectivesTable">ElectivesTable</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#error">error</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#exportToExcel">exportToExcel</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#generatePassword">generatePassword</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAdminDonationText">getAdminDonationText</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAllAlumniDonations">getAllAlumniDonations</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAllElectiveCourses">getAllElectiveCourses</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAllElectiveCoursesAdmin">getAllElectiveCoursesAdmin</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAllElectiveRequests">getAllElectiveRequests</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAllPassRequestAdmin">getAllPassRequestAdmin</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAllRegisteredUsers">getAllRegisteredUsers</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getBookedElectiveCourses">getBookedElectiveCourses</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getCurrentUser">getCurrentUser</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getInitials">getInitials</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getPassRequestHistory">getPassRequestHistory</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#importFromExcel">importFromExcel</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#indigo">indigo</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#info">info</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#InformationTable">InformationTable</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#initialState">initialState</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#items">items</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#Layout">Layout</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#LayoutContainer">LayoutContainer</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#LayoutRoot">LayoutRoot</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#loginRegularUser">loginRegularUser</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#loginWithInnoSSO">loginWithInnoSSO</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#Logo">Logo</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#makeDonationText">makeDonationText</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#neutral">neutral</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#Notifier">Notifier</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#openSnackbarExported">openSnackbarExported</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#OverviewFeatureItem">OverviewFeatureItem</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#OverviewLatestProducts">OverviewLatestProducts</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#OverviewRequests">OverviewRequests</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#Page">Page</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#PassRequestInfo">PassRequestInfo</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#PassRequestTable">PassRequestTable</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#PaymentQRCode">PaymentQRCode</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#processExcelCallback">processExcelCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#registerAdminUser">registerAdminUser</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#registerRegularUser">registerRegularUser</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#RequestElectiveTable">RequestElectiveTable</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#Scrollbar">Scrollbar</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#sendRequest">sendRequest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#SettingsPassword">SettingsPassword</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#SeverityPill">SeverityPill</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#SeverityPillRoot">SeverityPillRoot</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#SideNav">SideNav</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#SideNavItem">SideNavItem</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#states">states</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#statusMap">statusMap</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#style">style</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#success">success</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#SuggestDonationInterest">SuggestDonationInterest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#TopNav">TopNav</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#TransitionLeft">TransitionLeft</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#UpdateDonationInformation">UpdateDonationInformation</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#updateElectiveCourse">updateElectiveCourse</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#updateElectiveCourseRequest">updateElectiveCourseRequest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#updatePassRequest">updatePassRequest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#updatePasswordInformation">updatePasswordInformation</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#updateUserInformation">updateUserInformation</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#UploadDonationQRCode">UploadDonationQRCode</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#upsertAdminDonationText">upsertAdminDonationText</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#useAuth">useAuth</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#useAuthContext">useAuthContext</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#useMockedUser">useMockedUser</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#useNProgress">useNProgress</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#usePopover">usePopover</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#useSelection">useSelection</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#warning">warning</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#WhyDonateInnopolis">WhyDonateInnopolis</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#withAlphas">withAlphas</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#withAuthGuard">withAuthGuard</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">sections/request-elective/electives-table.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import PropTypes from 'prop-types';
+import { format } from 'date-fns';
+import {
+  Avatar,
+  Box,
+  Card,
+  Checkbox,
+  Stack,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TablePagination,
+  TableRow,
+  Modal,
+  Typography,
+  Button,
+  SvgIcon,
+  TextField,
+  CardHeader
+} from '@mui/material';
+import { Scrollbar } from 'src/components/scrollbar';
+import { getInitials } from 'src/utils/get-initials';
+import { useCallback, useEffect, useState } from 'react';
+import { createElectiveCourse, deleteElectiveCourse, getAllElectiveCoursesAdmin, updateElectiveCourse } from '../../api';
+import { PlusIcon } from '@heroicons/react/24/solid';
+
+/**
+ * The options for delivery modes of elective courses.
+ * @type {Array&lt;Object>}
+ */
+const states = [
+  {
+    value: 'ONLINE',
+    label: 'ONLINE'
+  },
+  {
+    value: 'OFFLINE',
+    label: 'OFFLINE'
+  },
+  {
+    value: 'HYBRID',
+    label: 'HYBRID'
+  }
+];
+
+/**
+ * Styles for the modal dialog box.
+ * @type {Object}
+ */
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  minWidth: 600,
+  bgcolor: 'background.paper',
+  border: '3px solid #000',
+  borderRadius: 2,
+  boxShadow: 24,
+  p: 4,
+};
+
+/**
+ * The initial state for creating or modifying an elective course.
+ * @type {Object}
+ */
+const initialState = {
+  "id": "",
+  "course_name": "",
+  "instructor_name": "",
+  "mode": "ONLINE",
+  "description": ""
+}
+
+/**
+ * ElectivesTable component.
+ * @param {Object} props - The props for the ElectivesTable component.
+ * @param {string} props.title - The title of the ElectivesTable.
+ */
+export const ElectivesTable = (props) => {
+  const {
+    title
+  } = props;
+
+  // State variables
+  const [open, setOpen] = useState(false);
+  const [electives, setElectives] = useState([]);
+  const [values, setValues] = useState(initialState)
+
+  // Handlers
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  /**
+   * Handles changes in form fields.
+   * @param {Object} event - The event object.
+   */
+  const handleChange = useCallback(
+    (event) => {
+      setValues((prevState) => ({
+        ...prevState,
+        [event.target.name]: event.target.value
+      }));
+    },
+    []
+  );
+
+  /**
+   * Deletes an elective course.
+   */
+  const deleteElective = async () => {
+    const { id } = values;
+    const deletedElective = await deleteElectiveCourse({ courseId: id })
+    const filteredElectives = electives.filter(elective => elective.id !== deletedElective.id)
+    setElectives(filteredElectives)
+    handleClose()
+  }
+
+  /**
+   * Creates an elective course.
+   */
+  const createElective = async () => {
+    const { course_name, instructor_name, mode, description } = values;
+    const data = {
+      course_name, instructor_name, mode, description
+    }
+    const createdElective = await createElectiveCourse({ data })
+    setElectives((prev) => [...prev, createdElective])
+    handleClose()
+  }
+
+  /**
+   * Updates an elective course.
+   */
+  const updateElective = async () => {
+    const { id, course_name, instructor_name, mode, description } = values;
+    const data = {
+      course_name, instructor_name, mode, description
+    }
+    const updatedElective = await updateElectiveCourse({ courseId: id, data })
+    const filteredElectives = electives.filter(elective => elective.id !== id)
+    setElectives([...filteredElectives, updatedElective])
+    handleClose()
+  }
+
+  /**
+   * Loads elective courses.
+   */
+  const loadingElectives = async () => {
+    const userElectives = await getAllElectiveCoursesAdmin()
+    setElectives(userElectives)
+  }
+
+  useEffect(() => {
+    loadingElectives()
+  }, [])
+
+  return (
+    &lt;Card>
+      {/* Modal for creating or modifying an elective course */}
+      &lt;Modal keepMounted
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        &lt;Box sx={style}>
+          {/* "id": "",
+    "course_name": "",
+    "instructor_name": "",
+    "mode": "",
+    "description": "" */}
+          &lt;Typography variant="h6"
+            component="h2"
+            sx={{ mb: 2 }}> {values.id ? "Modify" : "Create"} Elective Course&lt;/Typography>
+          {/* Form fields */}
+          &lt;TextField
+            fullWidth
+            label="Course Name"
+            name="course_name"
+            onChange={handleChange}
+            required
+            value={values.course_name}
+            sx={{
+              mb: 3
+            }}
+          />
+
+          &lt;TextField
+            fullWidth
+            label="Instructor Name"
+            name="instructor_name"
+            onChange={handleChange}
+            required
+            value={values.instructor_name}
+            sx={{
+              mb: 3
+            }}
+          />
+
+          &lt;TextField
+            fullWidth
+            label="Delivery mode"
+            name="mode"
+            onChange={handleChange}
+            required
+            select
+            SelectProps={{ native: true }}
+            value={values.mode}
+            sx={{
+              mb: 3
+            }}
+          >
+            {states.map((option) => (
+              &lt;option
+                key={option.value}
+                value={option.value}
+              >
+                {option.label}
+              &lt;/option>
+            ))}
+          &lt;/TextField>
+
+          &lt;TextField
+            fullWidth
+            label="Description"
+            name="description"
+            onChange={handleChange}
+            required
+            value={values.description}
+            sx={{
+              mb: 3
+            }}
+            multiline
+          />
+
+          {/* Buttons for actions */}
+          &lt;div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            &lt;Button
+              sx={{ mt: 4 }}
+              onClick={handleClose}
+            >
+              Close
+            &lt;/Button>
+            {values.id ? (
+              &lt;Button
+                onClick={updateElective}
+                sx={{
+                  mt: 4
+                }}
+                variant="contained"
+              >
+                Save
+              &lt;/Button>
+            ) : (
+              &lt;Button
+                onClick={createElective}
+                sx={{
+                  mt: 4
+                }}
+                variant="contained"
+              >
+                Create
+              &lt;/Button>
+            )}
+            {values.id &amp;&amp; (
+              &lt;Button
+                onClick={deleteElective}
+                sx={{
+                  mt: 4, backgroundColor: '#F47B7B',
+                  '&amp;:hover': {
+                    backgroundColor: "#F15555"
+                  }
+                }}
+                variant="contained"
+              >
+                Delete
+              &lt;/Button>
+            )}
+          &lt;/div>
+        &lt;/Box>
+      &lt;/Modal>
+
+      {/* Header section with add button */}
+      &lt;CardHeader action={
+        (&lt;Button
+          onClick={() => {
+            setValues(initialState)
+            handleOpen()
+          }}
+          startIcon={(
+            &lt;SvgIcon fontSize="small">
+              &lt;PlusIcon />
+            &lt;/SvgIcon>
+          )}
+          variant="contained"
+        >
+          Add
+        &lt;/Button>)} />
+
+      {/* Table section to display elective courses */}
+      &lt;Scrollbar>
+        &lt;Box sx={{ minWidth: 800 }}>
+          &lt;Table>
+            &lt;TableHead>
+              &lt;TableRow>
+
+                {/* {
+    "id": "cljvtw53m0000mznxa5cmb0hq",
+    "course_name": "Design-thinking ",
+    "instructor_name": "Pavel Voloschuk",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque eget ex ut ullamcorper. Quisque rutrum risus at nunc facilisis, a aliquet odio volutpat. Sed sollicitudin nunc non elementum bibendum. Ut eget ornare nisi. Ut ullamcorper iaculis sagittis. Nulla hendrerit accumsan semper. Aliquam magna orci, condimentum vitae cursus ac, dictum eu urna. ",
+    "mode": "OFFLINE"
+  }, */}
+
+                &lt;TableCell>
+                  Course ID
+                &lt;/TableCell>
+                &lt;TableCell>
+                  Course Name
+                &lt;/TableCell>
+                &lt;TableCell>
+                  Instructor Name
+                &lt;/TableCell>
+                &lt;TableCell>
+                  Mode
+                &lt;/TableCell>
+                &lt;TableCell>
+                  Description
+                &lt;/TableCell>
+                &lt;TableCell>
+                  Action
+                &lt;/TableCell>
+              &lt;/TableRow>
+            &lt;/TableHead>
+            &lt;TableBody>
+              {/* Iterate over elective courses */}
+              {electives.map((elective) => {
+                return (
+                  &lt;TableRow
+                    hover
+                    key={elective.id}
+                  >
+                    &lt;TableCell>
+                      {elective.id.slice(-6).toUpperCase()}
+                    &lt;/TableCell>
+                    &lt;TableCell>
+                      {elective.course_name}
+                    &lt;/TableCell>
+                    &lt;TableCell>
+                      {elective.instructor_name}
+                    &lt;/TableCell>
+                    &lt;TableCell>
+                      {elective.mode}
+                    &lt;/TableCell>
+                    &lt;TableCell>
+                      {/* Truncate long descriptions */}
+                      {elective.description.length &lt;= 18 ? elective.description : (elective.description.substr(0, 18) + "...")}
+                    &lt;/TableCell>
+                    {/* Button to modify elective */}
+                    &lt;TableCell>
+                      &lt;Button
+                        onClick={() => {
+                          setValues(elective)
+                          handleOpen()
+                        }}
+                        startIcon={(
+                          &lt;SvgIcon fontSize="small">
+                            &lt;svg xmlns="http://www.w3.org/2000/svg" style={{ height: 16, width: 16 }} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                              &lt;path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                            &lt;/svg>
+                          &lt;/SvgIcon>
+                        )}
+                      >
+                        Modify
+                      &lt;/Button>
+                    &lt;/TableCell>
+                  &lt;/TableRow>
+                );
+              })}
+            &lt;/TableBody>
+          &lt;/Table>
+        &lt;/Box>
+      &lt;/Scrollbar>
+    &lt;/Card>
+  );
+};
+
+// Prop types
+ElectivesTable.propTypes = {
+  title: PropTypes.string,
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun Mar 03 2024 21:48:29 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

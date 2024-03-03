@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>layouts/dashboard/side-nav.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AccountPopover">AccountPopover</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AccountProfile">AccountProfile</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AccountProfileDetails">AccountProfileDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AdminElectiveRequests">AdminElectiveRequests</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AdminPassRequests">AdminPassRequests</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AdminViewAccounts">AdminViewAccounts</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AdminViewDonations">AdminViewDonations</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#ApexChart">ApexChart</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#applyPagination">applyPagination</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AuthGuard">AuthGuard</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#AuthProvider">AuthProvider</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#avatars">avatars</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#BankDetails">BankDetails</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#Chart">Chart</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createComponents">createComponents</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#createEmotionCache">createEmotionCache</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createPalette">createPalette</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#createPassRequest">createPassRequest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#CreatePassRequest">CreatePassRequest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#createResourceId">createResourceId</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#createShadows">createShadows</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createTheme">createTheme</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#createTypography">createTypography</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#deletePassRequest">deletePassRequest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#ElectiveRequestTable">ElectiveRequestTable</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#ElectivesTable">ElectivesTable</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#error">error</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#exportToExcel">exportToExcel</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#generatePassword">generatePassword</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAdminDonationText">getAdminDonationText</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAllAlumniDonations">getAllAlumniDonations</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAllElectiveCourses">getAllElectiveCourses</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAllElectiveCoursesAdmin">getAllElectiveCoursesAdmin</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAllElectiveRequests">getAllElectiveRequests</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAllPassRequestAdmin">getAllPassRequestAdmin</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getAllRegisteredUsers">getAllRegisteredUsers</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getBookedElectiveCourses">getBookedElectiveCourses</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getCurrentUser">getCurrentUser</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getInitials">getInitials</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#getPassRequestHistory">getPassRequestHistory</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#importFromExcel">importFromExcel</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#indigo">indigo</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#info">info</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#InformationTable">InformationTable</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#initialState">initialState</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#items">items</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#Layout">Layout</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#LayoutContainer">LayoutContainer</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#LayoutRoot">LayoutRoot</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#loginRegularUser">loginRegularUser</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#loginWithInnoSSO">loginWithInnoSSO</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#Logo">Logo</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#makeDonationText">makeDonationText</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#neutral">neutral</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#Notifier">Notifier</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#openSnackbarExported">openSnackbarExported</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#OverviewFeatureItem">OverviewFeatureItem</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#OverviewLatestProducts">OverviewLatestProducts</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#OverviewRequests">OverviewRequests</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#Page">Page</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#PassRequestInfo">PassRequestInfo</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#PassRequestTable">PassRequestTable</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#PaymentQRCode">PaymentQRCode</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#processExcelCallback">processExcelCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#registerAdminUser">registerAdminUser</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#registerRegularUser">registerRegularUser</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#RequestElectiveTable">RequestElectiveTable</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#Scrollbar">Scrollbar</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#sendRequest">sendRequest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#SettingsPassword">SettingsPassword</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#SeverityPill">SeverityPill</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#SeverityPillRoot">SeverityPillRoot</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#SideNav">SideNav</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#SideNavItem">SideNavItem</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#states">states</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#statusMap">statusMap</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#style">style</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#success">success</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#SuggestDonationInterest">SuggestDonationInterest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#TopNav">TopNav</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#TransitionLeft">TransitionLeft</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#UpdateDonationInformation">UpdateDonationInformation</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#updateElectiveCourse">updateElectiveCourse</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#updateElectiveCourseRequest">updateElectiveCourseRequest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#updatePassRequest">updatePassRequest</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#updatePasswordInformation">updatePasswordInformation</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#updateUserInformation">updateUserInformation</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#UploadDonationQRCode">UploadDonationQRCode</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#upsertAdminDonationText">upsertAdminDonationText</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#useAuth">useAuth</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#useAuthContext">useAuthContext</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#useMockedUser">useMockedUser</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#useNProgress">useNProgress</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#usePopover">usePopover</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#useSelection">useSelection</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#warning">warning</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#WhyDonateInnopolis">WhyDonateInnopolis</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#withAlphas">withAlphas</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#withAuthGuard">withAuthGuard</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">layouts/dashboard/side-nav.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import NextLink from 'next/link';
+import { usePathname } from 'next/navigation';
+import PropTypes from 'prop-types';
+import ArrowTopRightOnSquareIcon from '@heroicons/react/24/solid/ArrowTopRightOnSquareIcon';
+import ChevronUpDownIcon from '@heroicons/react/24/solid/ChevronUpDownIcon';
+import {
+  Box,
+  Button,
+  Divider,
+  Drawer,
+  Stack,
+  SvgIcon,
+  Typography,
+  useMediaQuery
+} from '@mui/material';
+import { Logo } from 'src/components/logo';
+import { Scrollbar } from 'src/components/scrollbar';
+import { items } from './config';
+import { SideNavItem } from './side-nav-item';
+import { useRouter } from 'next/navigation';
+import { useAuth } from 'src/hooks/use-auth';
+import { useCallback } from 'react';
+
+/**
+ * SideNav component displays a navigation sidebar with links to different sections of the application.
+ * It also includes a "Sign Out" button and bug reporting information.
+ * 
+ * @param {object} props - The properties of the SideNav component.
+ * @param {boolean} props.open - Boolean indicating whether the sidebar is open.
+ * @param {function} props.onClose - Function to handle the closing of the sidebar.
+ * 
+ * @returns {JSX.Element} - JSX element representing the SideNav component.
+ */
+export const SideNav = (props) => {
+  // Destructure props
+  const { open, onClose } = props;
+
+  // Get the current pathname
+  const pathname = usePathname();
+
+  // Check if screen size is large up
+  const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
+
+  // Get router and authentication context
+  const router = useRouter();
+  const auth = useAuth();
+
+  /**
+   * Function to handle user sign out.
+   */
+  const handleSignOut = useCallback(() => {
+    onClose?.(); // Close the sidebar
+    auth.signOut(); // Sign out the user
+    router.push('/auth/login'); // Redirect to login page
+  }, [onClose, auth, router]);
+
+  // JSX content for the sidebar
+  const content = (
+    &lt;Scrollbar
+      sx={{
+        height: '100%',
+        '&amp; .simplebar-content': {
+          height: '100%'
+        },
+        '&amp; .simplebar-scrollbar:before': {
+          background: 'neutral.400'
+        }
+      }}
+    >
+      {/* Sidebar content */}
+      &lt;Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100%'
+        }}
+      >
+        {/* Logo */}
+        &lt;Box sx={{ p: 3 }}>
+          &lt;Box
+            component={NextLink}
+            href="/"
+            sx={{
+              display: 'inline-flex',
+              height: 32,
+              width: 32
+            }}
+          >
+            &lt;img
+              alt=""
+              src="/assets/logos/innopolis-logo.png"
+            />
+          &lt;/Box>
+        &lt;/Box>
+        &lt;Divider sx={{ borderColor: 'neutral.700' }} />
+        {/* Navigation links */}
+        &lt;Box
+          component="nav"
+          sx={{
+            flexGrow: 1,
+            px: 2,
+            py: 3,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: "space-between"
+          }}
+        >
+          &lt;Stack
+            component="ul"
+            spacing={2}
+            sx={{
+              listStyle: 'none',
+              p: 0,
+              m: 0
+            }}
+          >
+            {/* Mapping through navigation items */}
+            {items.map((item) => {
+              const active = item.path ? (pathname === item.path) : false;
+
+              return (
+                &lt;SideNavItem
+                  active={active}
+                  disabled={item.disabled}
+                  external={item.external}
+                  icon={item.icon}
+                  key={item.title}
+                  path={item.path}
+                  title={item.title}
+                />
+              );
+            })}
+          &lt;/Stack>
+          {/* Sign Out button */}
+          &lt;Stack sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            cursor: 'pointer',
+            color: 'neutral.500'
+          }}
+            onClick={handleSignOut}
+          >
+            &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style={{ width: 28, height: 28, marginBottom: 6, fontWeight: 600 }} className="w-6 h-6">
+              &lt;path fillRule="evenodd" d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9A.75.75 0 0115 9V5.25a1.5 1.5 0 00-1.5-1.5h-6zm5.03 4.72a.75.75 0 010 1.06l-1.72 1.72h10.94a.75.75 0 010 1.5H10.81l1.72 1.72a.75.75 0 11-1.06 1.06l-3-3a.75.75 0 010-1.06l3-3a.75.75 0 011.06 0z" clipRule="evenodd" />
+            &lt;/svg>
+            &lt;Typography sx={{
+              fontSize: 14,
+              fontWeight: 600,
+            }}>
+              Sign Out
+            &lt;/Typography>
+          &lt;/Stack>
+        &lt;/Box>
+        &lt;Divider sx={{ borderColor: 'neutral.700' }} />
+        {/* Bug reporting information */}
+        &lt;Box
+          sx={{
+            px: 2,
+            py: 3
+          }}
+        >
+          &lt;Typography
+            color="neutral.100"
+            variant="subtitle2"
+          >
+            Want to report a bug to the Alumni Developer Team
+          &lt;/Typography>
+          &lt;Typography
+            color="neutral.500"
+            variant="body2"
+          >
+            Use this  &lt;a href="https://t.me/+54TTT9VXGZMyMGIy"
+              target="_blank"
+              style={{ color: '#40BA21' }}
+              rel="noreferrer"> Telegram group chat&lt;/a>
+          &lt;/Typography>
+        &lt;/Box>
+      &lt;/Box>
+    &lt;/Scrollbar>
+  );
+
+  // Render sidebar based on screen size
+  if (lgUp) {
+    return (
+      &lt;Drawer
+        anchor="left"
+        open
+        PaperProps={{
+          sx: {
+            backgroundColor: 'neutral.800',
+            color: 'common.white',
+            width: 280
+          }
+        }}
+        variant="permanent"
+      >
+        {content}
+      &lt;/Drawer>
+    );
+  } else {
+    return (
+      &lt;Drawer
+        anchor="left"
+        onClose={onClose}
+        open={open}
+        PaperProps={{
+          sx: {
+            backgroundColor: 'neutral.800',
+            color: 'common.white',
+            width: 280
+          }
+        }}
+        sx={{ zIndex: (theme) => theme.zIndex.appBar + 100 }}
+        variant="temporary"
+      >
+        {content}
+      &lt;/Drawer>
+    );
+  }
+};
+
+// Prop types for the SideNav component
+SideNav.propTypes = {
+  onClose: PropTypes.func,
+  open: PropTypes.bool,
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun Mar 03 2024 21:48:29 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
