@@ -29,8 +29,11 @@ const details = [
     },
 ]
 
+/**
+ * PassRequestInfo component.
+ * Displays information related to pass requests.
+ */
 export const PassRequestInfo = () => {
-
 
     return (
         <div style={{ maxWidth: 500 }}>

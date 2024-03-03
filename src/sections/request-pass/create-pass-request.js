@@ -13,6 +13,11 @@ import {
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { useAuth } from 'src/hooks/use-auth';
 
+/**
+ * CreatePassRequest component.
+ * @param {Object} props - The props for the CreatePassRequest component.
+ * @param {Function} props.sendRequest - Function to send pass request.
+ */
 export const CreatePassRequest = ({ sendRequest }) => {
   const { user } = useAuth();
   const [requestDate, setRequestDate] = useState(new Date())

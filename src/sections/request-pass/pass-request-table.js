@@ -28,6 +28,15 @@ const statusMap = {
   REJECTED: 'error'
 };
 
+/**
+ * PassRequestTable component displays a table of pass requests.
+ * @param {object} props - Component props.
+ * @param {array} props.orders - Array of pass request objects.
+ * @param {string} [props.title] - Title for the table (optional).
+ * @param {string} [props.subheader] - Subheader for the table (optional).
+ * @param {function} props.updatePassRequests - Function to update pass requests.
+ * @returns {JSX.Element} PassRequestTable component.
+ */
 export const PassRequestTable = (props) => {
   const { orders = [], title, subheader, updatePassRequests } = props;
   const [open, setOpen] = useState(false);
@@ -57,6 +66,10 @@ export const PassRequestTable = (props) => {
     p: 4,
   };
 
+  /**
+ * Function to handle deletion of a pass request.
+ * @param {string} passRequestId - ID of the pass request to be deleted.
+ */
   const handleDeleteRequest = async (passRequestId) => {
     const requestResponse = await deletePassRequest({ passRequestId })
     // console.log(requestResponse);

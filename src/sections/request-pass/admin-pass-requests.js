@@ -43,6 +43,14 @@ const style = {
   p: 4,
 };
 
+
+/**
+ * AdminPassRequests component.
+ * @param {Object} props - The props for the AdminPassRequests component.
+ * @param {Array<Object>} props.orders - The list of pass requests.
+ * @param {Object} props.sx - The style object for the card container.
+ * @param {string} props.title - The title of the card.
+ */
 export const AdminPassRequests = (props) => {
   const { orders = [], sx, title } = props;
   const [requests, setRequests] = useState([])
