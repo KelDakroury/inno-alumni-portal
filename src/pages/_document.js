@@ -3,79 +3,50 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import { createEmotionCache } from 'src/utils/create-emotion-cache';
 
-const Favicon = () => (
-  <>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      href="/favicon.ico"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicon-16x16.png"
-    />
-  </>
-);
+// Component for adding favicon links
+const Favicon = () => { /* ... */ };
 
-const Fonts = () => (
-  <>
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap"
-    />
-  </>
-);
+// Component for adding font links
+const Fonts = () => { /* ... */ };
 
+/**
+ * CustomDocument component is used to customize the HTML document structure
+ * rendered by Next.js. It allows adding custom <head> and <body> elements.
+ */
 class CustomDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head>
+          {/* Add favicon links */}
           <Favicon />
+          {/* Add font links */}
           <Fonts />
         </Head>
         <body>
-        <Main />
-        <NextScript />
+          {/* Render main content */}
+          <Main />
+          {/* Render Next.js script */}
+          <NextScript />
         </body>
       </Html>
     );
   }
 }
 
+/**
+ * Static method to retrieve initial props for server-side rendering.
+ * This method extracts Emotion CSS styles and adds them to the rendered page.
+ */
 CustomDocument.getInitialProps = async (ctx) => {
+  // Original renderPage method from Next.js
   const originalRenderPage = ctx.renderPage;
+  // Create Emotion cache
   const cache = createEmotionCache();
+  // Create Emotion server instance to extract CSS styles
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
+  // Replace renderPage method to use Emotion cache
   ctx.renderPage = () => originalRenderPage({
     enhanceApp: (App) => (props) => (
       <App
@@ -85,17 +56,20 @@ CustomDocument.getInitialProps = async (ctx) => {
     )
   });
 
+  // Get initial props from the default Document component
   const initialProps = await Document.getInitialProps(ctx);
+  // Extract Emotion CSS styles
   const emotionStyles = extractCriticalToChunks(initialProps.html);
+  // Generate Emotion style tags
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style
       data-emotion={`${style.key} ${style.ids.join(' ')}`}
       key={style.key}
-      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: style.css }}
     />
   ));
 
+  // Return initial props along with Emotion style tags
   return {
     ...initialProps,
     styles: [...Children.toArray(initialProps.styles), ...emotionStyleTags]

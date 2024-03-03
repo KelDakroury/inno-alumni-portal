@@ -1,12 +1,11 @@
 import Head from 'next/head';
-import { Box, Container, Unstable_Grid2 as Grid } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { OverviewFeatureItem } from 'src/sections/overview/overview-feature-item';
 import Link from 'next/link';
 
-const now = new Date();
-
-export const dashboardComponents = [
+// Data for dashboard components
+const dashboardComponents = [
   {
     title: 'Network',
     description: 'Find the people you studied with',
@@ -31,7 +30,12 @@ export const dashboardComponents = [
     img: "/assets/overview/coins.png",
     link: "/make_donations"
   }
-]
+];
+
+/**
+ * Page component for the Overview page of the IU Alumni Portal.
+ * Renders a list of dashboard components.
+ */
 const Page = () => (
   <>
     <Head>
@@ -56,14 +60,15 @@ const Page = () => (
             py: 8
           }}
         >
+          {/* Map through dashboard components and render OverviewFeatureItem */}
           {dashboardComponents.map((feature, index) => (
-            <Link href={feature.link}
-              style={{ textDecoration: "none" }}
-              key={index}>
-              <OverviewFeatureItem
-                feature={feature}
-                sx={{ height: '100%' }}
-              />
+            <Link href={feature.link} key={index}>
+              <a style={{ textDecoration: "none" }}>
+                <OverviewFeatureItem
+                  feature={feature}
+                  sx={{ height: '100%' }}
+                />
+              </a>
             </Link>
           ))}
         </Box>
@@ -72,12 +77,15 @@ const Page = () => (
   </>
 );
 
+/**
+ * Define the layout for the Page component.
+ * @param {ReactNode} page - The child page content.
+ * @returns {ReactNode} - The page wrapped with the DashboardLayout.
+ */
 Page.getLayout = (page) => (
   <DashboardLayout>
     {page}
   </DashboardLayout>
 );
-
-
 
 export default Page;

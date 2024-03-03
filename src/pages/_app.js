@@ -11,19 +11,35 @@ import { createEmotionCache } from 'src/utils/create-emotion-cache';
 import Notifier from 'src/components/notifier';
 import 'simplebar-react/dist/simplebar.min.css';
 
+// Create an Emotion cache for server-side rendering
 const clientSideEmotionCache = createEmotionCache();
 
+// Placeholder component for splash screen
 const SplashScreen = () => null;
 
-
-
+/**
+ * App component is the main component of the application.
+ * It wraps the entire application with necessary context providers,
+ * theme providers, and global CSS settings.
+ * 
+ * @param {object} props - The properties of the App component.
+ * @param {React.Component} props.Component - The main component to render.
+ * @param {object} [props.emotionCache] - Emotion cache for server-side rendering.
+ * @param {object} props.pageProps - The props passed to the main component.
+ * 
+ * @returns {JSX.Element} - JSX element representing the entire application.
+ */
 const App = (props) => {
+  // Destructure props
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
+  // Custom hook to manage progress bar
   useNProgress();
 
+  // Get layout function from main component or use default layout
   const getLayout = Component.getLayout ?? ((page) => page);
 
+  // Create MUI theme
   const theme = createTheme();
 
   return (
@@ -41,13 +57,15 @@ const App = (props) => {
         <AuthProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />
+            {/* Check if authentication is loading */}
             <AuthConsumer>
               {
                 (auth) => auth.isLoading
-                  ? <SplashScreen />
-                  : getLayout(<Component {...pageProps} />)
+                  ? <SplashScreen />  // Show splash screen if authentication is loading
+                  : getLayout(<Component {...pageProps} />) // Render main component with layout
               }
             </AuthConsumer>
+            {/* Global notifier component */}
             <Notifier />
           </ThemeProvider>
         </AuthProvider>
