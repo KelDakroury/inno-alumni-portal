@@ -1,0 +1,30 @@
+name: Build and push JSDoc
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  jsdoc:
+    name: Build JSDoc and publish to GitHub Pages
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Build
+        uses: andstor/jsdoc-action@v1.2.1
+        with:
+          source_dir: ./src
+          recurse: true
+          output_dir: ./out
+          template: minami
+          front_page: README.md
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
