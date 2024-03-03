@@ -13,17 +13,42 @@ import {
 } from '@mui/material';
 import { updatePasswordInformation } from '../../api';
 
+/**
+ * Initial state for password fields.
+ * @type {Object}
+ */
 const initialState = {
   currentPassword: '',
   newPassword: ''
 }
 
+/**
+ * Component function for settings password.
+ * @returns {JSX.Element} JSX representation of the component.
+ */
 export const SettingsPassword = () => {
+  /**
+   * State to manage password values.
+   * @type {Object}
+   */
   const [values, setValues] = useState(initialState);
 
+  /**
+   * State to manage visibility of old password field.
+   * @type {boolean}
+   */
   const [showOldPassword, setShowOldPassword] = useState(false)
+
+  /**
+   * State to manage visibility of new password field.
+   * @type {boolean}
+   */
   const [showNewPassword, setShowNewPassword] = useState(false)
 
+  /**
+   * Callback function to handle input change.
+   * @param {Event} event - The input change event.
+   */
   const handleChange = useCallback(
     (event) => {
       setValues((prevState) => ({
@@ -34,9 +59,14 @@ export const SettingsPassword = () => {
     []
   );
 
+  /**
+   * Function to handle form submission.
+   * Sends a request to update password.
+   * @param {Event} event - The form submission event.
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     const response = await updatePasswordInformation({
       current_password: values.currentPassword,
       new_password: values.newPassword,

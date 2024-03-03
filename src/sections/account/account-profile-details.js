@@ -32,7 +32,12 @@ const states = [
   }
 ];
 
-
+/**
+ * AccountProfileDetails component renders a form for editing user profile details.
+ * It includes input fields for various profile information such as name, email, phone number, etc.
+ *
+ * @returns {JSX.Element} JSX element containing the user profile form.
+ */
 export const AccountProfileDetails = () => {
   const { user: {
     about_you = "", city = "", company = "",

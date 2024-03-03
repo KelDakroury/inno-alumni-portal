@@ -43,17 +43,17 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-/*{
-    "id": "",
-    "name": "",
-    "email": "",
-    "course_name": "",
-    "instructor_name": "",
-    "mode": "",
-    "status": "",
-    "feedback": "",
-    "created_at": ""
-  }*/ 
+
+/**
+ * AdminViewAccounts component displays the list of registered users with their details.
+ * It allows administrators to view user information and export the list to Excel.
+ * 
+ * @param {object} props - The props object containing orders, sx, and title.
+ * @param {array} props.orders - An array of user orders.
+ * @param {object} props.sx - Custom styling for the Card component.
+ * @param {string} props.title - The title of the Card component.
+ * @returns {JSX.Element} JSX representation of the AdminViewAccounts component.
+ */
 export const AdminViewAccounts = (props) => {
   const { orders = [], sx, title } = props;
   const [users, setUsers] = useState([])
