@@ -43,6 +43,15 @@ const style = {
   p: 4,
 };
 
+
+/**
+ * Component for rendering admin elective requests.
+ * @param {Object} props - Component props.
+ * @param {Array} props.orders - Array of order objects.
+ * @param {Object} props.sx - Styles object.
+ * @param {string} props.title - Title of the card.
+ * @returns {JSX.Element} - JSX for admin elective requests.
+ */
 export const AdminElectiveRequests = (props) => {
   const { orders = [], sx, title } = props;
   const [requests, setRequests] = useState([])
