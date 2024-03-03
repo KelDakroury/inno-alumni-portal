@@ -22,25 +22,14 @@ import { useEffect, useState } from 'react';
 import { getAllAlumniDonations } from '../../api';
 import { exportToExcel } from 'src/utils/excel-helpers'
 
-const statusMap = {
-  PENDING: 'warning',
-  APPROVED: 'success',
-  REJECTED: 'error'
-};
-
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  minWidth: 600,
-  bgcolor: 'background.paper',
-  border: '3px solid #000',
-  borderRadius: 2,
-  boxShadow: 24,
-  p: 4,
-};
-
+/**
+ * Component representing an admin view of donations.
+ * @param {Object} props - The props object containing various parameters.
+ * @param {Array} [props.orders=[]] - An array containing orders.
+ * @param {Object} [props.sx] - The style object for customization.
+ * @param {string} props.title - The title of the card.
+ * @returns {JSX.Element} - Returns JSX for rendering the admin view of donations.
+ */
 export const AdminViewDonations = (props) => {
   const { orders = [], sx, title } = props;
   const [donations, setDonations] = useState([])
@@ -50,6 +39,9 @@ export const AdminViewDonations = (props) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  /**
+   * Function to load donations from the API.
+   */
   const loadingDonations = async () => {
     const userDonations = await getAllAlumniDonations()
     const modifiedDonations = userDonations.map(({ id, user: { name, email }, message, created_at }) => ({
@@ -163,6 +155,7 @@ export const AdminViewDonations = (props) => {
           startIcon={(
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" style={{ height: 25, width: 25 }} className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 13.5l3 3m0 0l3-3m-3 3v-6m1.06-4.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           )}
         >
@@ -277,7 +270,14 @@ export const AdminViewDonations = (props) => {
   );
 };
 
-AdminViewDonations.prototype = {
+/**
+ * PropTypes for the AdminViewDonations component.
+ * @type {Object}
+ * @property {Array} [orders] - An array containing orders.
+ * @property {Object} [sx] - The style object for customization.
+ * @property {string} title - The title of the card.
+ */
+AdminViewDonations.propTypes = {
   orders: PropTypes.array,
   sx: PropTypes.object,
   title: PropTypes.string,

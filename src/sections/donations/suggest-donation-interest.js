@@ -13,11 +13,17 @@ import {
 } from '@mui/material';
 import { makeDonationText } from '../../api';
 
-
-
+/**
+ * Component for suggesting donation interest.
+ * @returns {JSX.Element} - Returns JSX for suggesting donation interest.
+ */
 export const SuggestDonationInterest = () => {
     const [message, setMessage] = useState("")
 
+    /**
+     * Function to handle form submission.
+     * @param {Event} event - The event object.
+     */
     const handleSubmit = async (event) => {
         event.preventDefault();
         const donation = {

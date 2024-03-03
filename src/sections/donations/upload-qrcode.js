@@ -18,6 +18,10 @@ const user = {
     timezone: 'GTM-7'
 };
 
+/**
+ * Component for uploading donation QR code.
+ * @returns {JSX.Element} - Returns JSX for uploading donation QR code.
+ */
 export const UploadDonationQRCode = () => (
     <Card>
         <CardContent>
@@ -33,7 +37,6 @@ export const UploadDonationQRCode = () => (
                     alt=""
                     src="/assets/donations/qr-code.jpg"
                 />
-
             </Box>
         </CardContent>
         <Divider />

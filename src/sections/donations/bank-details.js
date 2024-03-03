@@ -5,7 +5,6 @@ import {
     Typography
 } from '@mui/material';
 
-
 const details = [
     {
         title: "Полное наименование",
@@ -41,11 +40,11 @@ const details = [
     },
     {
         title: "Адрес местонахождения Организации",
-        value: "420500, Республика Татарстан, г\. Иннополис, ул\. Университетская, д\.1"
+        value: "420500, Республика Татарстан, г. Иннополис, ул. Университетская, д.1"
     },
     {
         title: "Почтовый адрес",
-        value: "420500, Республика Татарстан, г\. Иннополис, ул\. Университетская, д\.1"
+        value: "420500, Республика Татарстан, г. Иннополис, ул. Университетская, д.1"
     },
     {
         title: "Расчетный счет",
@@ -53,7 +52,7 @@ const details = [
     },
     {
         title: "Банк",
-        value: "ОТДЕЛЕНИЕ N8610 СБЕРБАНКА РОССИИ Г\. КАЗАНЬ"
+        value: "ОТДЕЛЕНИЕ N8610 СБЕРБАНКА РОССИИ Г. КАЗАНЬ"
     },
     {
         title: "БИК",
@@ -63,10 +62,19 @@ const details = [
         title: "Корреспондентский счет",
         value: "30101810600000000603"
     },
-]
+];
 
+/**
+ * Component representing bank details.
+ * @returns {JSX.Element} - Returns JSX for rendering the bank details.
+ */
 export const BankDetails = () => {
+    const [values, setValues] = useState({});
 
+    /**
+     * Function to handle changes in input fields.
+     * @param {Event} event - The event object.
+     */
     const handleChange = useCallback(
         (event) => {
             setValues((prevState) => ({
@@ -77,6 +85,10 @@ export const BankDetails = () => {
         []
     );
 
+    /**
+     * Function to handle form submission.
+     * @param {Event} event - The event object.
+     */
     const handleSubmit = useCallback(
         (event) => {
             event.preventDefault();
@@ -103,7 +115,6 @@ export const BankDetails = () => {
                         ))}
                     </div>
                 </Box>
-
             </Card>
         </div>
     );

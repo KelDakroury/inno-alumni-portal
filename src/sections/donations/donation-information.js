@@ -12,9 +12,12 @@ import {
     Typography
 } from '@mui/material';
 import { Editor } from '@tinymce/tinymce-react';
-import { getAdminDonationText, upsertAdminDonationText } from 'src/api'
+import { getAdminDonationText, upsertAdminDonationText } from 'src/api';
 
-
+/**
+ * Component for updating donation information.
+ * @returns {JSX.Element} - Returns JSX for updating donation information.
+ */
 export const UpdateDonationInformation = () => {
     const [values, setValues] = useState({
         firstName: 'Anika',
@@ -25,6 +28,10 @@ export const UpdateDonationInformation = () => {
         country: 'USA'
     });
 
+    /**
+     * Function to handle changes in input fields.
+     * @param {Event} event - The event object.
+     */
     const handleChange = useCallback(
         (event) => {
             setValues((prevState) => ({
@@ -35,18 +42,24 @@ export const UpdateDonationInformation = () => {
         []
     );
 
-
     const editorRef = useRef(null);
     const [dirty, setDirty] = useState(false)
     const [donationText, setDonationText] = useState("<p>Loading....</p>")
 
     useEffect(() => setDirty(false), [donationText])
+
+    /**
+     * Function to get admin donation text.
+     */
     const handleGetAdminDonationText = async () => {
         const { message } = await getAdminDonationText()
-        // console.log(message)
         setDonationText(message)
     }
 
+    /**
+     * Function to set admin donation text.
+     * @param {Event} e - The event object.
+     */
     const handleSetAdminDonationText = async (e) => {
         e.preventDefault()
         if (editorRef.current) {
@@ -54,18 +67,17 @@ export const UpdateDonationInformation = () => {
             setDirty(false)
             editorRef.current.setDirty(false)
 
-            // console.log(content)
             const donation = {
                 message: content,
             }
-            const responseDonation = await upsertAdminDonationText({ donation })
-            // console.log(responseDonation)
+            await upsertAdminDonationText({ donation })
         }
     }
 
     useEffect(() => {
         handleGetAdminDonationText()
     }, [])
+
     return (
         <form
             autoComplete="off"
@@ -109,7 +121,6 @@ export const UpdateDonationInformation = () => {
                                     }}
                                 />
                             </Grid>
-
                         </Grid>
                         {dirty && <Typography sx={{ px: 1.5, color: 'red' }} variant='body2'>You have unsaved content!</Typography>}
                     </Box>
