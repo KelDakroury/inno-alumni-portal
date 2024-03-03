@@ -1,3 +1,6 @@
+/**
+ * @file history-elective-request-table.js is a file for the ElectiveRequestTable component.
+ */
 import { format } from 'date-fns';
 import PropTypes from 'prop-types';
 import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';

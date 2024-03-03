@@ -1,3 +1,7 @@
+/**
+ * @file chart.js is a file for creating a styled component named Chart using styled from '@mui/material/styles'.
+ */
+
 import dynamic from 'next/dynamic'; // Importing dynamic from 'next/dynamic' to dynamically import components
 import { styled } from '@mui/material/styles'; // Importing styled from '@mui/material/styles' for styling components
 
